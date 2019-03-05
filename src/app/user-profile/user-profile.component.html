@@ -1,11 +1,10 @@
 
   <div><img [src]="User.photo" [alt]="nom" /> <br/></div>
-  <h1>Nom = {{User.nom}} <br/></h1>
-  <h1>Prénom = {{User.firstName}} <br/></h1>
-  <h3>Quote = {{User.quote}} <br/>
-  <input [(ngModel)]="User.quote"></h3>
-<div>
-  <button *ngIf="this.isButtonVisible" (click)="this.isButtonVisible = false">Masquer l'age</button>
-  <button *ngIf="!this.isButtonVisible" (click)="this.isButtonVisible = true">Afficher l'age</button>
-  <h3 *ngIf="this.isButtonVisible">{{User.age}}</h3>
-</div>
+  <ul>
+    <li><h2>Nom = {{User.nom}} <br/></h2></li>
+    <li><h2>Prénom = {{User.firstName}} <br/></h2></li>
+    <li><h2>{{User.quote}} <br/></h2></li>
+    <li><h3 *ngIf="this.isButtonVisible">{{User.age}} ans</h3></li>  <button *ngIf="this.isButtonVisible" (click)="this.isButtonVisible = false">Masquer l'age</button>  <button *ngIf="!this.isButtonVisible" (click)="this.isButtonVisible = true">Afficher l'age</button>
+  </ul>
+  <input [(ngModel)]="User.quote" placeholder="Enter your quote here">
+
