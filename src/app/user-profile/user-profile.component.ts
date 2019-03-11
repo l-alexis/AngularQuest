@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserProfileComponent implements OnInit { 
 
-  private isButtonVisible = true;
+  private isButtonVisible = !this.isButtonVisible;
   User = {
   nom : "Bob",
   firstName : 'John',
@@ -15,6 +15,7 @@ export class UserProfileComponent implements OnInit {
   quote : '',
   photo : 'https://randomuser.me/api/portraits/lego/2.jpg'
   };
+
   constructor() { }
    
   ngOnInit() {

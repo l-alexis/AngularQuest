@@ -1,10 +1,13 @@
-
-  <div><img [src]="User.photo" [alt]="nom" /> <br/></div>
-  <ul>
-    <li><h2>Nom = {{User.nom}} <br/></h2></li>
-    <li><h2>Prénom = {{User.firstName}} <br/></h2></li>
-    <li><h2>{{User.quote}} <br/></h2></li>
-    <li><h3 *ngIf="this.isButtonVisible">{{User.age}} ans</h3></li>  <button *ngIf="this.isButtonVisible" (click)="this.isButtonVisible = false">Masquer l'age</button>  <button *ngIf="!this.isButtonVisible" (click)="this.isButtonVisible = true">Afficher l'age</button>
+<div class="card" style="width: 18rem;">
+  <img class="card-img-top" [src]="User.photo" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">{{User.nom}} {{User.firstName}}</h5>
+    <p class="card-text">Prénom = {{User.firstName}}.</p>
+    <p class="card-title">{{User.quote}}</p>
+    <input class="card-text"[(ngModel)]="User.quote" placeholder="Enter your quote here">
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item" *ngIf="this.isButtonVisible">{{User.age}} ans</li>
+    <li class="list-group-item"><button (click)="this.isButtonVisible = !isButtonVisible">Afficher/Masquer l'age</button></li>
   </ul>
-  <input [(ngModel)]="User.quote" placeholder="Enter your quote here">
-
+</div>
